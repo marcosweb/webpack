@@ -7,3 +7,5 @@ const teste2 = (i) => i * 2
 console.log(teste2(10))
 console.log(bomDia(aluno))
 console.log(`o dobro de 10 é  ${dobro(10)}`)
+
+const aluno = ['nayra', 'mambira', 'cabecao', 'BOLSONARO']
