@@ -1,11 +1,16 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+
 import 'bootstrap'
 import './estilo.scss'
-import { dobro, bomDia, aluno } from "./nayra.js"
+import { bomDia } from './nayra.js'
 
-const teste2 = (i) => i * 2
+const mensagem = bomDia('Bolsonaro')
 
-console.log(teste2(10))
-console.log(bomDia(aluno))
-console.log(`o dobro de 10 é  ${dobro(10)}`)
-
-const aluno = ['nayra', 'mambira', 'cabecao', 'BOLSONARO']
+ReactDOM.render(
+    <div className="react">
+        <h2>Isto aqui é REACT</h2>
+        <p>{mensagem}</p>
+    </div>,
+    document.querySelector('#app')
+)
