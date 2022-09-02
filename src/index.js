@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import 'bootstrap'
-import './estilo.scss'
+import './style/app.scss'
 import { bomDia } from './nayra.js'
 
 const mensagem = bomDia('Bolsonaro')
