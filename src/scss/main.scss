@@ -1,0 +1,8 @@
+@import 'bootstrap';
+@import './variables.scss';
+
+.titulo {
+    color: $primary-color;
+    font-weight: bold;
+    list-style: none;
+}

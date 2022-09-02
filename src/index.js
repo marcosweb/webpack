@@ -1,18 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 
-import 'bootstrap'
-import './estilo.scss'
-import { bomDia } from './nayra.js'
-import Formulario from './formulario'
+import './scss/main.scss';
+import App from './components/App';
 
-const mensagem = bomDia('Bolsonaro')
-
-ReactDOM.render(
-    <div className="react">
-        <h2>Isto aqui é REACT</h2>
-        <p>{mensagem}</p>
-        <Formulario />
-    </div>,
-    document.querySelector('#app')
-)
+const root = createRoot(document.getElementById('app'));
+root.render(<App />);
