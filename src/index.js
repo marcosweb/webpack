@@ -1,16 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import {createRoot} from 'react-dom/client'
 
 import 'bootstrap'
 import './style/app.scss'
-import { bomDia } from './nayra.js'
 
-const mensagem = bomDia('Bolsonaro')
+const app = document.getElementById('app')
+const root = createRoot(app) 
 
-ReactDOM.render(
-    <div className="react">
-        <h2>Isto aqui é REACT</h2>
-        <p>{mensagem}</p>
-    </div>,
-    document.querySelector('#app')
-)
+root.render(<h1>Boa Noite!</h1>) 
