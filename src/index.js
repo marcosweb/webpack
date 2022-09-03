@@ -3,8 +3,9 @@ import {createRoot} from 'react-dom/client'
 
 import 'bootstrap'
 import './style/app.scss'
+import App from './components/App'
 
 const app = document.getElementById('app')
 const root = createRoot(app) 
 
-root.render(<h1>Boa Noite!</h1>) 
+root.render(<App />) 
