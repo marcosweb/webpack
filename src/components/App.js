@@ -17,7 +17,11 @@ class App extends React.Component {
             </Container> */}
 
         <Container>
-          <FormImc />
+          <FormImc title="Calcule agora!" buttonLabel="Salvar" />
+        </Container>
+
+        <Container>
+          <FormImc title="Vamos calcular o IMC" buttonLabel="Gravar" />
         </Container>
       </>
     );
