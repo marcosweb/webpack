@@ -1,31 +1,52 @@
 import React from "react";
-import { Alert, Container } from "react-bootstrap";
+import { Alert, Container, Button } from "react-bootstrap";
 import FormImc from "./FormImc";
 
+
 class App extends React.Component {
-  render() {
-    return (
-      <>
-        <Container>
-          <h2>Cálculo de IMC</h2>
-        </Container>
 
-        {/* <Container>
-                <Alert variant="success">
-                    Nayra Brenda
-                </Alert>
-            </Container> */}
+    constructor() {
+        super()
+        this.state = {}
+    }
 
-        <Container>
-          <FormImc title="Calcule agora!" buttonLabel="Salvar" />
-        </Container>
+    callback = (result) => {
+        this.setState(() => {
+            return result
+        });
+    }
 
-        <Container>
-          <FormImc title="Vamos calcular o IMC" buttonLabel="Gravar" />
-        </Container>
-      </>
-    );
-  }
+    close = () => {
+
+        this.setState(() => {
+            return { ...this.state, mensagem: '' };
+        });
+    }
+
+    render() {
+        return (
+            <>
+                <Container>
+                    <FormImc
+                        titulo='Cálculo de IMC'
+                        funcaoRetorno={this.callback}
+                    />
+                </Container>
+                <Container>
+                    {this.state.mensagem &&
+                        <Alert variant="success">
+                            <p>{this.state.mensagem}</p>
+                            <Button
+                                variant="info"
+                                onClick={this.close}>
+                                Fechar
+                            </Button>
+                        </Alert>
+                    }
+                </Container>
+            </>
+        );
+    }
 }
 
 export default App;
