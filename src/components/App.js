@@ -2,7 +2,6 @@ import React from "react";
 import { Alert, Container, Button } from "react-bootstrap";
 import FormImc from "./FormImc";
 
-
 class App extends React.Component {
 
     constructor() {
@@ -17,9 +16,8 @@ class App extends React.Component {
     }
 
     close = () => {
-
         this.setState(() => {
-            return { ...this.state, mensagem: '' };
+            return { ...this.state, mensagem: { msg: '', variant: '' } };
         });
     }
 
@@ -33,16 +31,17 @@ class App extends React.Component {
                     />
                 </Container>
                 <Container>
-                    {this.state.mensagem &&
-                        <Alert variant="success">
-                            <p>{this.state.mensagem}</p>
-                            <Button
-                                variant="info"
-                                onClick={this.close}>
-                                Fechar
-                            </Button>
-                        </Alert>
-                    }
+                    <Alert
+                        dismissible
+                        show={this.state.mensagem?.msg?.length > 0}
+                        onClose={this.close}
+                        variant={this.state.mensagem?.cor}>
+                        <Alert.Heading>
+                            Seu IMC é {this.state.imc}
+                        </Alert.Heading>
+                        <hr />
+                        <p>{this.state.mensagem?.msg}</p>
+                    </Alert>
                 </Container>
             </>
         );

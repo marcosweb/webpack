@@ -7,7 +7,6 @@ import { calcularImc, diagnostico } from "../imc";
 
 class FormImc extends React.Component {
 
-
     calcular = () => {
         const peso = document.querySelector("#formPeso").value;
         const altura = document.querySelector("#formAltura").value;
@@ -16,7 +15,6 @@ class FormImc extends React.Component {
 
         const info = { imc, mensagem };
         this.props.funcaoRetorno(info)
-
     };
 
     render() {
